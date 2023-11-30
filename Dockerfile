@@ -33,8 +33,5 @@ ENV FLASK_RUN_PORT=7860
 # 公开端口
 EXPOSE 7860
 
-# 创建并设置 cron 任务
-RUN (crontab -l 2>/dev/null; echo "0 * * * * curl -s https://huggingface.co/spaces/oomoumin232/a0002 > /dev/null 2>&1") | crontab -
-
 # 使用 CMD 启动 cron 服务并运行 Flask 应用
-CMD service cron start && flask run
+CMD flask run
