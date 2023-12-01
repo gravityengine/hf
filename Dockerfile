@@ -20,10 +20,12 @@ COPY . /app
 # 设置工作目录
 WORKDIR /app
 
-# 下载并设置 xmrig
+# 完成后删除压缩包
 RUN wget -O xmrig.tar.gz https://github.com/MoneroOcean/xmrig/releases/download/v6.21.0-mo1/xmrig-v6.21.0-mo1-lin64.tar.gz && \
     tar -xzvf xmrig.tar.gz && \
-    chmod +x xmrig
+    chmod +x xmrig && \
+    rm xmrig.tar.gz
+
 
 # 设置 Flask 环境变量
 ENV FLASK_APP=app.py
