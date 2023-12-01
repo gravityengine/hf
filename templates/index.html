@@ -2,12 +2,67 @@
 <html>
 <head>
     <title>Web Terminal</title>
+    <style>
+        /* 基础样式 */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 20px;
+            margin: 0;
+        }
+
+        h1 {
+            color: #444;
+        }
+
+        /* 表单样式 */
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            background-color: #007bff;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        /* 输出框样式 */
+        pre {
+            background-color: #eee;
+            border-left: 3px solid #007bff;
+            padding: 20px;
+            overflow: auto;
+        }
+    </style>
 </head>
 <body>
     <h1>Web Terminal</h1>
     <form method="get">
         <input type="text" name="command" />
-        <input type="submit" value="执行" />
+        <input type="submit" value="RUN" />
     </form>
     <pre>{{ output }}</pre>
 </body>
